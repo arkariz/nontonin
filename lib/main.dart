@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
       themeMode: themeManager.themeMode,
       getPages: AppPages.routes,
       initialRoute: Routes.SPLASH_SCREEN,
-      home: const MyHomePage(),
     );
   }
 }
