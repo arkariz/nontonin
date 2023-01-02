@@ -11,7 +11,8 @@ class ColorsConstant {
   static Color blueDark = const Color(0xFF19458c);
   static Color blueLight = const Color(0xFF24539e);
   static Color white = const Color(0xFFFFFFFF);
-  static Color black = Colors.black;
+  static Color blackDark = const Color(0xFF1c1c1c);
+  static Color blackLight = const Color(0XFF282929);
   static Color grey = const Color(0xFF92929D);
   static Color orange = const Color(0xFFFF8700);
 }
