@@ -4,7 +4,7 @@ class SizeConfig {
   static double? screenWidth;
   static double? screenHeight;
 
-  void initialize(BuildContext context) {
+  static void initialize(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
   }
