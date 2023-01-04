@@ -3,7 +3,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:nontonin/core/theme/colors.dart';
 import 'package:nontonin/core/theme/theme_constant.dart';
 import 'package:nontonin/core/utils/size_config.dart';
-import 'package:nontonin/features/splash_screen/splash_screen_controller.dart';
+import 'package:nontonin/features/splash_screen/presentation/splash_screen_controller.dart';
 
 class SplashScreen extends GetView<SplashScreenController> {
   const SplashScreen({super.key});
