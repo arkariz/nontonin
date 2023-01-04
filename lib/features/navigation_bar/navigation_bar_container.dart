@@ -10,25 +10,26 @@ class NavigationBarContainer extends GetView<NavigationBarController> {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
+        extendBody: true,
         body: getPages(controller.activeNavBar),
         bottomNavigationBar: BottomNavigationBar(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
           currentIndex: controller.activeNavBar,
           onTap: ((int value) {
             controller.activeNavBar = value;
           }),
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: controller.getHomeIcon(controller.activeNavBar),
               label: "home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "home",
+              icon: controller.getDiscoverIcon(controller.activeNavBar),
+              label: "discover",
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "home",
-            )
           ],
         ),
       ),
@@ -39,7 +40,6 @@ class NavigationBarContainer extends GetView<NavigationBarController> {
     final pages = [
       MyHomePage(index: activeNavbar),
       MyHomePage(index: activeNavbar),
-      MyHomePage(index: activeNavbar)
     ];
 
     return pages[activeNavbar];
