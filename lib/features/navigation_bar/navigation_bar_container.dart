@@ -38,8 +38,8 @@ class NavigationBarContainer extends GetView<NavigationBarController> {
 
   Widget getPages(int activeNavbar) {
     final pages = [
-      MyHomePage(index: activeNavbar),
-      MyHomePage(index: activeNavbar),
+      MyHomePage(),
+      MyHomePage(),
     ];
 
     return pages[activeNavbar];
