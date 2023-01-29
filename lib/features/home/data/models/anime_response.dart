@@ -1,15 +1,36 @@
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
 import 'package:nontonin/features/home/domain/entity/anime_entity.dart';
 
+part 'anime_response.g.dart';
+
+@HiveType(typeId: 1)
 class AnimeResponse extends Equatable {
+  @HiveField(0)
   String? id;
+
+  @HiveField(1)
   String? title;
+
+  @HiveField(2)
   String? poster;
+
+  @HiveField(3)
   String? genre;
+
+  @HiveField(4)
   String? status;
+
+  @HiveField(5)
   String? type;
+
+  @HiveField(6)
   String? totalEpisode;
+
+  @HiveField(7)
   String? sub;
+
+  @HiveField(8)
   String? playerUrl;
 
   AnimeResponse({
