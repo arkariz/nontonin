@@ -1,18 +1,45 @@
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
 import 'package:nontonin/features/home/domain/entity/movie_entity.dart';
 
+part 'movie_response.g.dart';
+
+@HiveType(typeId: 1)
 class MovieResponse extends Equatable {
+  @HiveField(0)
   String? title;
+
+  @HiveField(1)
   String? year;
+
+  @HiveField(2)
   String? imdb;
+
+  @HiveField(3)
   String? poster;
+
+  @HiveField(4)
   String? genre;
+
+  @HiveField(5)
   String? runtime;
+
+  @HiveField(6)
   String? director;
+
+  @HiveField(7)
   String? country;
+
+  @HiveField(8)
   String? rating;
+
+  @HiveField(9)
   String? votes;
+
+  @HiveField(10)
   String? sub;
+
+  @HiveField(11)
   String? quality;
 
   MovieResponse({
