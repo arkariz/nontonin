@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
+import 'package:nontonin/core/route/app_routes.dart';
 
 class SplashScreenController extends GetxController {
   @override
@@ -13,7 +14,7 @@ class SplashScreenController extends GetxController {
     Timer(
       const Duration(seconds: 3),
       () {
-        Get.offNamed("page");
+        Get.offNamed(Routes.NAVIGATION_BAR);
       },
     );
   }
