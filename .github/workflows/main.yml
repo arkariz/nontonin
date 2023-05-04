@@ -1,26 +1,32 @@
-# This is a basic workflow to help you get started with Actions
+name: Flutter_Tests
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [main]
   pull_request:
-    branches: [ master ]
+    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  tests:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: olah data
-      uses: mirfanrafif/flutter-autograding@v0.13
+      - name: Checkout the code
+        uses: actions/checkout@v2
+        
+      - name: Install and set Flutter version
+        uses: subosito/flutter-action@v1.4.0
+        with: 
+          flutter-version: '3.3.6'
+          
+      - name: Restore packages
+        run: flutter pub get
+      
+      - name: Analyze
+        run: flutter analyze
+
+      - name: Run tests
+        run: flutter test --coverage
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
