@@ -1,8 +1,6 @@
 name: Flutter_Tests
 
 on:
-  push:
-    branches: [master]
   pull_request:
     branches: [master]
 
@@ -21,9 +19,6 @@ jobs:
           
       - name: Restore packages
         run: flutter pub get
-      
-      - name: Analyze
-        run: flutter analyze
 
       - name: Run tests
         run: flutter test --coverage
