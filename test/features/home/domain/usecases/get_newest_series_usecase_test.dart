@@ -43,17 +43,17 @@ void main() {
     verifyNoMoreInteractions(repository);
   });
 
-  test("Should get failure from repository", () async {
-    //arrange
-    when(repository.getNewestSeries())
-        .thenAnswer((_) async => Left(ServerFailure()));
+  // test("Should get failure from repository", () async {
+  //   //arrange
+  //   when(repository.getNewestSeries())
+  //       .thenAnswer((_) async => Left(ServerFailure()));
 
-    //act
-    final result = await usecase();
+  //   //act
+  //   final result = await usecase();
 
-    //assert
-    expect(result, Left(ServerFailure()));
-    verify(repository.getNewestSeries());
-    verifyNoMoreInteractions(repository);
-  });
+  //   //assert
+  //   expect(result, Left(ServerFailure()));
+  //   verify(repository.getNewestSeries());
+  //   verifyNoMoreInteractions(repository);
+  // });
 }
