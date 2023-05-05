@@ -24,10 +24,15 @@ jobs:
 
       - name: Run tests
         run: flutter test --coverage
+      
+      - name: Ignore file from test
+        run: lcov --remove coverage/lcov.info 'lib/features/models/anime_response.g.dart' -o coverage/new_lcov.info
+
 
       - name: Upload coverage reports to Codecov
+        uses: Nef10/lcov-reporter-action@v0.3.0
+        with:
+          pr_number: ${{ github.event.number }}
+          github-token: ${{ github.token }}
+
       #   uses: codecov/codecov-action@v3
-      uses: Nef10/lcov-reporter-action@v0.3.0
-      with:
-        lcov-file: lcov.info
-        pr-number: ${{ github.event.number }}
