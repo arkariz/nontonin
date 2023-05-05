@@ -29,6 +29,7 @@ jobs:
         uses: Nef10/lcov-reporter-action@v0.3.0
         with:
           lcov-file: lcov.info
-          pr-number: ${{ github.event.number }}
+          pr_number: ${{ github.event.number }}
+          github-token: ${{ github.token }}
 
       #   uses: codecov/codecov-action@v3
