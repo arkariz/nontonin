@@ -28,7 +28,6 @@ jobs:
       - name: Upload coverage reports to Codecov
         uses: Nef10/lcov-reporter-action@v0.3.0
         with:
-          lcov-file: lcov.info
           pr_number: ${{ github.event.number }}
           github-token: ${{ github.token }}
 
