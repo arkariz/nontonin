@@ -26,7 +26,8 @@ jobs:
         run: flutter test --coverage
       
       - name: Ignore file from test
-        run: dart pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '\.g\.dart$'
+        run: lcov --remove coverage/lcov.info 'lib/features/models/anime_response.g.dart' -o coverage/new_lcov.info
+
 
       - name: Upload coverage reports to Codecov
         uses: Nef10/lcov-reporter-action@v0.3.0
